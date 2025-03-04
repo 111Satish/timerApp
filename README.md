@@ -1,50 +1,101 @@
-# Welcome to your Expo app 👋
+Timer App
+A simple and intuitive timer app built with React Native, Expo, and Yarn. This app allows users to create, manage, and track timers with features like customizable alerts, history tracking, and export functionality.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Features
+Create Timers: Add timers with custom names, durations, and categories.
 
-## Get started
+Timer Alerts: Set halfway alerts to notify users when 50% of the timer is completed.
 
-1. Install dependencies
+History Tracking: View a list of completed timers with their completion times.
 
-   ```bash
-   npm install
-   ```
+Export History: Export timer history as a JSON file.
 
-2. Start the app
+Light/Dark Mode: Supports both light and dark themes for better user experience.
 
-   ```bash
-    npx expo start
-   ```
+Prerequisites
+Before you begin, ensure you have the following installed:
 
-In the output, you'll find options to open the app in a
+Node.js (v16 or higher)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Yarn (v1.22 or higher)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Expo CLI (install globally using npm install -g expo-cli)
 
-## Get a fresh project
+Getting Started
+1. Clone the Repository
+Clone the repository to your local machine:
 
-When you're ready, run:
+bash
+Copy
+git clone https://github.com/111satish/timerApp.git
+cd timerApp
+2. Install Dependencies
+Install the required dependencies using Yarn:
 
-```bash
-npm run reset-project
-```
+bash
+Copy
+yarn install
+3. Generate Native Code
+Run the following command to generate the native code for Android and iOS:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+bash
+Copy
+npx expo prebuild
+This will create the android and ios directories in your project.
 
-## Learn more
+Running the App
+Run on Android
+To run the app on an Android emulator or device, use:
 
-To learn more about developing your project with Expo, look at the following resources:
+bash
+Copy
+yarn android
+This command will start the Metro bundler and launch the app on the connected Android device or emulator.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Run on iOS
+To run the app on an iOS simulator or device, use:
 
-## Join the community
+bash
+Copy
+yarn ios
+This command will start the Metro bundler and launch the app on the connected iOS simulator or device.
 
-Join our community of developers creating universal apps.
+Building the Project
+Build for Android
+To build the Android app, run:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+bash
+Copy
+expo build:android
+Follow the prompts to generate an APK or AAB file.
+
+Build for iOS
+To build the iOS app, run:
+
+bash
+Copy
+expo build:ios
+Follow the prompts to generate an IPA file.
+
+Running Tests
+This project includes unit tests and integration tests. Run the tests using:
+
+bash
+Copy
+yarn test
+Folder Structure
+Copy
+timer-app/
+├── assets/               # Static assets (images, fonts, etc.)
+├── components/           # Reusable UI components
+├── screens/              # App screens
+├── utils/                # Utility functions and helpers
+├── context/              # React context providers
+├── App.tsx               # Main application entry point
+├── app.json              # Expo configuration
+├── babel.config.js       # Babel configuration
+├── tsconfig.json         # TypeScript configuration
+├── package.json          # Project dependencies
+└── README.md             # Project documentation
+
+
