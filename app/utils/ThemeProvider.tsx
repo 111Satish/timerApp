@@ -3,30 +3,31 @@ import { Appearance } from "react-native";
 
 // Define light and dark mode colors
 const lightColors = {
-  primary: "#007bff",
-  background: "#f8f9fa",
-  cardBackground: "#ffffff",
-  textPrimary: "#333333",
-  textSecondary: "#666666",
-  border: "#e0e0e0",
-  success: "#28a745",
-  error: "#dc3545",
-  warning: "#ffc107",
-  info: "#17a2b8",
-};
-
-const darkColors = {
-  primary: "#0d6efd",
-  background: "#121212",
-  cardBackground: "#1e1e1e",
-  textPrimary: "#ffffff",
-  textSecondary: "#cccccc",
-  border: "#333333",
-  success: "#28a745",
-  error: "#dc3545",
-  warning: "#ffc107",
-  info: "#17a2b8",
-};
+    primary: "#4CAF50",
+    background: "#FAFAFA",
+    cardBackground: "#FFFFFF",
+    textPrimary: "#212121",
+    textSecondary: "#757575",
+    border: "#E0E0E0",
+    success: "#2E7D32",
+    error: "#D32F2F",
+    warning: "#FFA000",
+    info: "#0288D1",
+  };
+  
+  const darkColors = {
+    primary: "#81C784",
+    background: "#121212",
+    cardBackground: "#1E1E1E",
+    textPrimary: "#FFFFFF",
+    textSecondary: "#B0BEC5",
+    border: "#424242",
+    success: "#388E3C",
+    error: "#E53935",
+    warning: "#FFB300",
+    info: "#29B6F6",
+  };
+  
 
 // Create a context for the theme
 const ThemeContext = createContext({

@@ -2,7 +2,8 @@ import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { s, vs } from "react-native-size-matters";
-import { useTheme } from "../utils/ThemeProvider"; 
+import { useTheme } from "../utils/ThemeProvider";
+import { StatusBar } from "expo-status-bar";
 
 interface HeaderProps {
   title: string;
@@ -10,36 +11,47 @@ interface HeaderProps {
   rightComponent?: React.ReactNode;
 }
 
-const Header: React.FC<HeaderProps> = ({ title, onBackPress, rightComponent }) => {
-  const { colors } = useTheme(); 
+const Header: React.FC<HeaderProps> = ({
+  title,
+  onBackPress,
+  rightComponent,
+}) => {
+  const { colors } = useTheme();
 
   return (
-    <View style={[styles.header, { backgroundColor: colors.background }]}>
-      {onBackPress && (
-        <TouchableOpacity onPress={onBackPress} style={styles.backButton}>
-          <MaterialIcons name="arrow-back" size={s(24)} color={colors.textPrimary} />
-        </TouchableOpacity>
-      )}
+    <>
+      <StatusBar style={"auto"} backgroundColor={colors.background} />
+      <View style={[styles.header, { backgroundColor: colors.background }]}>
+        {onBackPress && (
+          <TouchableOpacity onPress={onBackPress} style={styles.backButton}>
+            <MaterialIcons
+              name="arrow-back"
+              size={s(24)}
+              color={colors.textPrimary}
+            />
+          </TouchableOpacity>
+        )}
 
-      <View style={styles.titleContainer}>
-        <Text style={[styles.title, { color: colors.textPrimary }]}>{title}</Text>
-      </View>
+        <View style={styles.titleContainer}>
+          <Text style={[styles.title, { color: colors.textPrimary }]}>
+            {title}
+          </Text>
+        </View>
 
-      <View style={styles.rightComponentContainer}>
-        {rightComponent}
+        <View style={styles.rightComponentContainer}>{rightComponent}</View>
       </View>
-    </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   header: {
+    marginTop: vs(40),
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: s(20),
     paddingVertical: vs(10),
     borderBottomWidth: 1,
-    borderBottomColor: "#e0e0e0",
   },
   backButton: {
     marginRight: s(10),
